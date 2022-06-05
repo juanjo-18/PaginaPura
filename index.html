@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<style>
+    body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/299/438/non_2x/abstract-orange-background-with-wavy-lines-vector.jpg"), url("paper.gif");
+     background-color: #cccccc;
+    }
+   #parte13:hover{
+    transition-delay: 300ms;
+    padding: 10px;
+    width: 700px;
+    background-image: linear-gradient(270deg,rgb(87, 139, 2),rgb(40, 133, 102),rgb(82, 5, 97));
+    color:beige;
+   
+   }
+
+   #parte13:active{
+    padding: 20px;
+    width: 25%;
+   }
+    #parte13{
+        text-shadow: -1px 1px 0 black;
+        background-image: linear-gradient(270deg,rgb(156, 250, 4),rgb(0, 255, 170),rgb(216, 95, 240));
+        width: 40%;
+        height: 40%;
+        text-align: center;
+       margin-left: 30%;
+       margin-right: 30%;
+       font-size: 15px;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+
+   
+    div :last-of-type::after{
+       content: "...";
+       
+    }
+    div::first-letter{
+        font-size: 200%;
+        font-weight: bold;
+        font-style: italic;
+    }
+    div {
+     padding-bottom: 28px;
+    }
+    p {
+        padding-bottom: 10px;
+    }
+
+    .container {
+       
+        width: 50%;
+        max-width: 1060px;
+        background: #000;
+        overflow: hidden;
+        margin: 25px auto;
+        position: relative;
+        height: 400px;
+        z-index:1;
+    }
+
+    .container:hover .background {
+        -webkit-transform: scale(0.8) translate(-50%, -50%);
+        -ms-transform: scale(0.8) translate(-50%, -50%);
+        transform: scale(0.8) translate(-50%, -50%);
+    }
+
+    .container:hover .front {
+        -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        transform: scale(1.4) rotate(1440deg);
+        opacity: 1;
+    }
+
+    .background {
+        
+        top: 45%;
+        left: 50%;
+        width: 1400px;
+        height: 550px;
+        position: absolute;
+        margin-left: 18%;
+
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-transition: -webkit-transform 1s;
+        transition: transform 1s;
+    }
+
+    .front {
+       
+        top: 2%;
+        left: 37.8%;
+        z-index: 1;
+        position: absolute;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: -webkit-transform 1s;
+        transition: transform 1s;
+        margin-top: 10%;
+        margin-left: 20%;
+        opacity:0.2;
+    }
+
+
+    a:link {
+        color: rgb(255, 255, 255);
+    }
+
+
+   
+    .modalDialog {
+        
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+}
+.modalDialog:target {
+    
+	opacity:5;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+    text-align: center;
+	width: 400px;
+    height: 300px;
+    color:#FFFFFF;
+	position: absolute;
+	margin-top: 50% ;
+    margin-left: 500px;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: -webkit-linear-gradient(rgb(0, 137, 149), rgb(255, 255, 255));
+}
+.modalDialog1 {
+    
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+}
+.modalDialog1:target {
+    
+	opacity:5;
+	pointer-events: auto;
+}
+.modalDialog1 > div {
+    text-align: center;
+	width: 400px;
+    height: 300px;
+    color:#FFFFFF;
+	position: absolute;
+	margin-top: 50% ;
+    margin-left: 500px;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: -webkit-linear-gradient(rgb(0, 194, 120), rgb(216, 2, 91));
+}
+.modalDialog2 {
+    
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    opacity:0;
+	pointer-events:none;
+    transition: all 1s;
+}
+
+.modalDialog2:target {
+    
+	opacity:5;
+	pointer-events: auto;
+}
+.modalDialog2 > div {
+    text-align: center;
+	width: 400px;
+    height: 300px;
+    color:#FFFFFF;
+	position: absolute;
+	margin-top: 50% ;
+    margin-left: 500px;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: -webkit-linear-gradient(rgb(27, 0, 149), rgb(179, 255, 0));
+}
+
+.close {
+	background: #000000;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	
+	
+}
+.close:hover { background: rgb(0, 137, 149); }
+.close1 {
+    
+	background: #000000;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	
+	
+}
+.close1:hover { background: rgb(0, 194, 120); }
+.close2 {
+    
+	background: #000000;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	
+	
+}
+.close2:hover { background: rgb(27, 0, 149); }
+
+div::first-letter {
+        font-size: 25px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    
+
+   
+
+ p:nth-child(1n) {
+        margin-bottom: 12px;
+    }
+
+    div:nth-child(1n) {
+        margin-bottom: 36px;
+    }
+    p {
+        margin-bottom: 12px;
+        text-align: left;
+    }
+    div {
+       
+        margin: 20px;
+        padding-left: 20px;
+        padding: 0.9%;
+        width: 23%;
+        margin-bottom: 36px;
+
+    }
+
+
+   
+
+
+</style>
+<body>
+    
+   
+
+    <button class="botonFL">
+        <a href="#openModal">Front lever</a>
+        </button>
+<div id="openModal" class="modalDialog">
+	<div id="1">
+		<a href="#close" title="Close" class="close">x</a>
+		<h2>Front Lever</h2>
+        <img src="Front Lever.jpg" style="width: 400px">
+		
+        
+	</div>
+</div>
+<button class="botonP">
+    <a href="#openModal1">Plancha</a>
+    </button>
+<div id="openModal1" class="modalDialog1">
+<div>
+    <a href="#close1" title="Close" class="close1">x</a>
+    <h2>Plancha</h2>
+    <img src="Full Planche.jpg" style="width: 400px">
+    
+    
+</div>
+</div>
+<button class="botonBL">
+    <a href="#openModal2">Back lever</a>
+    </button>
+<div id="openModal2" class="modalDialog2">
+<div>
+    <a href="#close2" title="Close2" class="close2">x</a>
+    <h2>Back Lever</h2>
+    <img src="Back Lever.jpg" style="width: 400px">
+    
+    
+</div>
+</div>
+       
+</div>
+<h1>Front Lever</h1>
+    <div>
+        <p>El front lever es un elemento de calistenia y street workout.</p>
+        <p>Es un ejercicio de tiron que utiliza los musculos de la espalda y biceps.</p>
+    </div>
+ 
+    <p>El Front lever es un ejercicio de calistenia que aún estando dentro del repertorio de ejercicios avanzados, 
+        es relativamente fácil de realizar, entre otras cosas, necesitaremos una gran fuerza a nivel de la musculatura 
+        escapular y una gran capacidad de anti-extensión a nivel de la musculatura del núcleo (conocida como core).
+        Antes de comenzar, para poder realizar los ejercicios de la progresión para el Front Lever necesitaremos una 
+        barra de dominadas o unas barras paralelas a la suficiente altura, también podemos hacerlo en anillas sin embargo 
+        esto último debido a la dificultad añadida de la estabilidad, no es nada recomendable para un principiante ya que 
+        hará el ejercicio mucho más complicado.</p>
+  
+    <h2>Hollow Body Holy</h2>
+    <div>
+    <p>Primero debemos comenzar con lo más fácil y básico, que es el Hollow Body Hold.
+        Este ejercicio nos ayudará a mejorar nuestra fuerza en piernas y core de forma muy específica para el 
+        Front Lever, para realizarlo simplemente túmbate en el suelo boca arriba y mantén la siguiente postura 
+        tanto tiempo como te sea posible, intenta mantenerte apoyado únicamente con la parte superior de los glúteos 
+        y deja los brazos en la misma posición en la que lo harías en un Front lever.</p>
+    <p>
+        <img src="https://external-preview.redd.it/FzY1ztqslLSEZyRbX5yU44QWh4rhOh8pEiUmk-PHNmE.jpg?auto=webp&s=428fdcd0e92ae172de3fa4e9c4ab5bcd6fb6e91a" alt="Foto de hollow body">
+    </div>
+
+    <h2>Tuck Front Lever</h2>
+    <div>
+        <p>Para realizar este ejercicio simplemente cuélgate de una barra, lleva las rodillas al pecho flexionando la cadera al mismo tiempo y colócate mirando hacia arriba, tal y como puedes ver en la imagen.</p>
+        <img src="https://i.ytimg.com/vi/2jYkF-RYZjQ/mqdefault.jpg" alt="Foto de una front lever tuck">
+    </div>
+
+    <h2>Advanced Tuck Front Lever</h2>
+    <div>
+        <p>Este ejercicio es parecido al tuck front lever, pero extendiendo mas las piernas hasta hacer un angulo de 90° o un poco mas entre el torso y las piernas.</p>
+        <img src="https://i.ytimg.com/vi/tmyxyGZaxwU/hqdefault.jpg" alt="Imagen de una advanced front lever">
+    </div>
+
+    <h2>Front Lever Half</h2>
+    <div>
+        <p>Este ejercicio tienes que llevar las piernas lo mas separada y tener la cadera recta, apretando los lumbares y el culo. Hasta que las piernas llegen a un angulo de 180°.</p>
+        <img src="https://i.ytimg.com/vi/TbAUdpRyzGc/maxresdefault.jpg" alt="Imagen de front lever half">
+    </div>
+
+    <h2>Front Lever</h2>
+    <div>
+        <p>Este ya es el ejercicio terminado colgado de la barra extendiendo el cuerpo paralelamente del suelo con las piernas extendidas.</p>
+        <img src="https://www.pontemasfuerte.com/bePMF/wp-content/uploads/2020/02/Imagen12.png" alt="Front lever completo">
+    </div>
+
+    <div id="parte13">FRONT LEVER <br />
+        Es un ejercicio increible de la calistenia que muy poca gente tiene, hay que entrenar muchos años para conseguirlo
+        y no todos lo consiguen despues de mucho tiempo. Tienes que tener una buena rutina y mucha dedicacion para poder hacerlo
+    </div>
+
+<div class="container">
+    <div class="background"> <img src="http://www.kengurupro.es/uploads/images/galerias/9/2015-09-07-55ed647ee439c.jpg" alt="baby"> </div>
+    <div class="front"> <img src="dani.png" alt="" width:120px height=160px> </div>
+</div>
+   
+
+<b><a href="https://cronosfit.com/front-lever/" target="_blank">Progresiones</a></b></p>
+   
+        
+</body>
+</html>
